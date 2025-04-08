@@ -1,0 +1,20 @@
+﻿@model IEnumerable<CrudApp.Models.Product>
+
+    <h2>🔥 Featured Products</h2>
+
+    @if (Model != null && Model.Any())
+{
+    <ul class="list-group">
+        @foreach (var item in Model)
+        {
+        <li class="list-group-item d-flex justify-content-between">
+            <span>@item.Name</span>
+            <span>$@item.Price</span>
+        </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No products found.</p>
+}
